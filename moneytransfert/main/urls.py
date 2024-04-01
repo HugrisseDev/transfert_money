@@ -6,3 +6,14 @@ urlpatterns = [
     path("signin/", views.signin, name="signin"),
     path("",  views.home, name='home'),
 ]
+
+
+
+
+
+
+
+
+
+
+
