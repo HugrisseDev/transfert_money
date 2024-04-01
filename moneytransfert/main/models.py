@@ -21,6 +21,3 @@ class TransactionHistory(models.Model):
     def __str__(self):
         return f"{self.user.username} {self.action} {self.transaction.amount} {self.transaction.currency} on {self.date_time}"
 
-
-class login:
-    pass
