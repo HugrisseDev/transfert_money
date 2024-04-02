@@ -2,6 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .models import Transaction
+from .forms import TransactionForm
 
 
 def dashboard(request):
@@ -43,3 +44,9 @@ def signin(request):
 def home(request):
     
     return render(request, 'home.html')
+
+
+def createTransaction(request):
+    
+    form = TransactionForm()
+    context = {'form': form}
