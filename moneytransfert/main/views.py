@@ -7,7 +7,7 @@ from .forms import TransactionForm
 
 def dashboard(request):
     
-    queryAllData = Transaction.objects.get(id=1)
+    queryAllData = Transaction.objects.get(id=2)
     
     context = {'transact': queryAllData}
     
@@ -50,3 +50,5 @@ def createTransaction(request):
     
     form = TransactionForm()
     context = {'form': form}
+    
+    return render(request, 'TransactionForm.html', context = context)
