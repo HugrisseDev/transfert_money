@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboar</title>
+</head>
+<body>
+    {% include "base.html" %}
+    <hr>
+
+    <h1>Dashboard {{ transact.sender }}</h1>
+    <br>
+
+
+    <p>sender: {{ transact.sender }}</p> <br>
+    <p>recipient: {{ transact.recipient }}</p> <br>
+    <p>amount: {{ transact.amount }}</p> <br>
+    <p>currency: {{ transact.currency }}</p> <br> <hr>
+
+
+    
+</body>
+</html>

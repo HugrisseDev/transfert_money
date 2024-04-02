@@ -1,9 +1,17 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from .models import Transaction
 
-def home(request):
-    return render(request, 'index.html')
+
+def dashboard(request):
+    
+    queryAllData = Transaction.objects.get(id=1)
+    
+    context = {'transact': queryAllData}
+    
+    
+    return render(request, 'dashboard.html', context = context)
 
 def signup(request):
     if request.method == 'POST':
@@ -28,7 +36,10 @@ def signin(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')  # Redirect to the home page after successful sign-in
+            return redirect('dashboard')  # Redirect to the home page after successful sign-in
     return render(request, 'signin.html')
 
 
+def home(request):
+    
+    return render(request, 'home.html')
